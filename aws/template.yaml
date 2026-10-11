@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  UrjaCycle AI - Serverless Architecture
+  Bharat Builds Tour: Environmental Hacks (Track 03: Waste and Energy)
+  Author: Bhomesh Razdan (Lead Architect)
+
+Globals:
+  Function:
+    Timeout: 15
+    MemorySize: 256
+    Runtime: python3.12
+    Environment:
+      Variables:
+        DYNAMODB_WASTE_TABLE: !Ref WasteLogsTable
+        DYNAMODB_SOLAR_TABLE: !Ref SolarAuditsTable
+  Api:
+    Cors:
+      AllowMethods: "'GET,POST,OPTIONS'"
+      AllowHeaders: "'Content-Type,Authorization'"
+      AllowOrigin: "'*'"
+
+Resources:
+  UrjaCycleApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      Name: UrjaCycle-Serverless-API
+
+  WasteClassifyFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../
+      Handler: src.lambda_handlers.handler_classify_waste
+      Events:
+        Classify:
+          Type: Api
+          Properties:
+            RestApiId: !Ref UrjaCycleApi
+            Path: /api/waste/classify
+            Method: GET
+
+  SolarCalculateFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../
+      Handler: src.lambda_handlers.handler_calculate_solar
+      Events:
+        CalculateSolar:
+          Type: Api
+          Properties:
+            RestApiId: !Ref UrjaCycleApi
+            Path: /api/solar/calculate
+            Method: GET
+
+  EVSlotsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../
+      Handler: src.lambda_handlers.handler_get_ev_slots
+      Events:
+        GetSlots:
+          Type: Api
+          Properties:
+            RestApiId: !Ref UrjaCycleApi
+            Path: /api/ev/slots
+            Method: GET
+
+  WasteLogsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: UrjaCycle-Waste-Logs
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: log_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: log_id
+          KeyType: HASH
+
+  SolarAuditsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: UrjaCycle-Solar-Audits
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: audit_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: audit_id
+          KeyType: HASH
+
+Outputs:
+  ApiEndpoint:
+    Value: !Sub "https://${UrjaCycleApi}.execute-api.${AWS::Region}.amazonaws.com/prod/"

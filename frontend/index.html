@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrjaCycle AI | Circular Waste & Solar Clean Energy on AWS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-amber-500 to-emerald-400 flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg shadow-amber-500/20">
+          UC
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-lg font-bold text-white tracking-tight">UrjaCycle AI</h1>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 font-mono">Track 03: Waste & Energy</span>
+          </div>
+          <p class="text-xs text-slate-400">Bharat Builds Tour | Lead Architect: Bhomesh Razdan</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-panel p-4">
+        <span class="text-xs text-slate-400">FAIR SCRAP VALUE GENERATED</span>
+        <div class="text-3xl font-extrabold text-amber-400 mt-2">₹450 / kg</div>
+        <p class="text-[11px] text-slate-400 mt-1">High-grade smartphone e-waste</p>
+      </div>
+      <div class="glass-panel p-4">
+        <span class="text-xs text-slate-400">SOLAR ROOFTOP YIELD (250 m²)</span>
+        <div class="text-3xl font-extrabold text-emerald-400 mt-2">52.8 MWh / yr</div>
+        <p class="text-[11px] text-slate-400 mt-1">Saves ₹4.48 Lakh annually</p>
+      </div>
+      <div class="glass-panel p-4">
+        <span class="text-xs text-slate-400">EV SOLAR MIDDAY TARIFF</span>
+        <div class="text-3xl font-extrabold text-cyan-400 mt-2">₹3.80 / kWh</div>
+        <p class="text-[11px] text-slate-400 mt-1">67% discount vs coal peak (₹11.50)</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="glass-panel p-5 space-y-4 text-xs">
+        <h2 class="text-base font-semibold text-white flex items-center gap-2">
+          <i data-lucide="trash-2" class="w-4 h-4 text-amber-400"></i>
+          AI Waste Segregation & Informal Recycler Bounty
+        </h2>
+        <div>
+          <label class="block text-slate-400 mb-1">Enter Waste Item</label>
+          <input type="text" id="waste-input" value="lithium_battery" class="w-full bg-slate-900 border border-slate-700 p-2 rounded text-white">
+        </div>
+        <button id="btn-classify" class="w-full py-2 bg-amber-600 hover:bg-amber-500 text-white rounded font-medium">Classify & Value Item</button>
+        <div id="waste-result" class="bg-slate-900 p-3 rounded border border-slate-800 space-y-1 font-mono text-[11px]">
+          <div>Category: <span class="text-amber-400">Hazardous E-Waste</span></div>
+          <div>Bin: <span class="text-red-400">Black/Red E-Waste Bin</span></div>
+          <div>Informal Fair Value: <span class="text-emerald-400">₹180 / kg</span></div>
+          <div>CO₂ Offset: <span class="text-cyan-400">3.8 kg CO₂/kg</span></div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-5 space-y-4 text-xs">
+        <h2 class="text-base font-semibold text-white flex items-center gap-2">
+          <i data-lucide="sun" class="w-4 h-4 text-emerald-400"></i>
+          Rooftop Solar & EV Midday Load Shifter
+        </h2>
+        <div>
+          <label class="block text-slate-400 mb-1">Rooftop Area (m²)</label>
+          <input type="number" id="solar-area" value="250" class="w-full bg-slate-900 border border-slate-700 p-2 rounded text-white">
+        </div>
+        <button id="btn-calc-solar" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-medium">Compute PV Yield & Payback</button>
+        <div id="solar-result" class="bg-slate-900 p-3 rounded border border-slate-800 space-y-1 font-mono text-[11px]">
+          <div>System Capacity: <span class="text-emerald-400">17.5 kWp</span></div>
+          <div>Annual Generation: <span class="text-cyan-400">52,800 kWh</span></div>
+          <div>Annual Savings: <span class="text-emerald-400">₹4,48,800 / year</span></div>
+          <div>Payback Period: <span class="text-amber-400">1.9 Years</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

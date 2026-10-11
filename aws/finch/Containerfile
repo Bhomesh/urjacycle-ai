@@ -1,0 +1,10 @@
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023
+RUN dnf update -y && dnf install -y python3.12 && dnf clean all
+RUN useradd -m -u 1001 urjacycle
+WORKDIR /app
+COPY --chown=urjacycle:urjacycle src/ /app/src/
+COPY --chown=urjacycle:urjacycle frontend/ /app/frontend/
+COPY --chown=urjacycle:urjacycle aws/ /app/aws/
+USER urjacycle
+EXPOSE 8082
+ENTRYPOINT ["python3.12", "-m", "src.server", "8082"]

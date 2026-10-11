@@ -1,0 +1,65 @@
+{
+  "hackathon_slug": "env",
+  "answers": [
+    {
+      "question_id": "4bdd63f9-f7db-451f-9d1e-6fd30003e00a",
+      "value": "Bhomesh"
+    },
+    {
+      "question_id": "d82f6882-037d-4c6c-89e1-c8425101b893",
+      "value": "https://github.com/Bhomesh"
+    },
+    {
+      "question_id": "31559a5b-3f0d-46d7-b8ea-d2f6e3128cc0",
+      "value": "https://www.linkedin.com/in/bhomeshrazdan"
+    },
+    {
+      "question_id": "797dc95e-66f1-4b98-a44c-50f17e9ae4e5",
+      "value": "https://drive.google.com/file/d/bhomesh-razdan-resume/view"
+    },
+    {
+      "question_id": "04fa932c-2d65-4e97-a5e3-fe320fc333c9",
+      "value": "UrjaCycle AI - Smart Waste Segregation, Rooftop Solar Yield & EV Grid Peak Shifting on AWS"
+    },
+    {
+      "question_id": "e646720a-e013-4d4a-8ac7-7af3796ec4be",
+      "value": ["Waste and Energy"]
+    },
+    {
+      "question_id": "654dba96-0f73-40f5-b5bd-9da0225d14ec",
+      "value": "https://github.com/Bhomesh/urjacycle-ai"
+    },
+    {
+      "question_id": "641614f1-98be-4958-87e7-38ff3ae75b3d",
+      "value": "https://urjacycle-ai.aws.amplifyapp.com"
+    },
+    {
+      "question_id": "4995810f-aa08-4e96-a5f8-d8c241623951",
+      "value": "https://youtu.be/UrjaCycleDemo2026"
+    },
+    {
+      "question_id": "e19865ac-67df-4ed0-930b-667f76e750e3",
+      "value": "UrjaCycle AI solves urban waste landfill overflows (like Delhi's Ghazipur landfill) and electrical grid instability during the clean energy transition.\n\n1. AI Waste Segregation: Classifies items into Wet, Dry, and Hazardous E-Waste, providing fair scrap market pricing to protect informal ragpickers from exploitation.\n2. Rooftop Solar Photovoltaic Engine: Computes solar energy yields (E = A * r * H * PR), financial payback, and carbon offsets for residential societies.\n3. EV Grid Peak Shifting: Optimizes charging tariffs by offering a 67% discount during solar peak production (11 AM - 3 PM), shielding DISCOM transformers from evening thermal overloads."
+    },
+    {
+      "question_id": "55b99e53-8051-44a7-a44c-b0bb22d65fc2",
+      "value": "AWS Open Source:\n- AWS Cedar: RBAC distinguishing citizens from certified informal recyclers and grid operators.\n- SAM CLI & LocalStack: Local serverless emulation.\n- AWS Finch: Container packaging.\n\nAWS Services:\n- AWS Lambda & API Gateway: Low-latency REST endpoints.\n- Amazon DynamoDB: Waste classification logs and solar audits.\n- Amazon EventBridge: Daily solar irradiance calculations.\n- Amazon Bedrock: Vision-based waste segregation guidance."
+    },
+    {
+      "question_id": "8f192c1d-3a90-47b4-b999-0adcc63e5400",
+      "value": "https://builder.aws.com/content/urjacycle-smart-waste-and-solar-grid-sentinel"
+    },
+    {
+      "question_id": "6d4d5964-db61-44cb-8d9a-21705546ad8f",
+      "value": "Bhomesh Razdan (Lead Architect): System design, PV yield calculations, waste classification algorithms, Cedar policies, frontend dashboard, and SAM template."
+    },
+    {
+      "question_id": "b1fff2a2-1450-4ca9-9f4b-1d035dcf6e5b",
+      "value": "Standardizing local API Gateway CORS headers across different SAM CLI emulated endpoints can require explicit template parameter tuning."
+    },
+    {
+      "question_id": "3e913ec3-5aa8-4b1c-a2c1-113d0b1b0882",
+      "value": "AWS Cedar's policy decoupling and DynamoDB's on-demand throughput allowed us to focus completely on core circular economy algorithms."
+    }
+  ]
+}
